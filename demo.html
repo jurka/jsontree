@@ -10,9 +10,11 @@
         <meta name="description" content="jQuery plugin jsontree">
         <meta name="viewport" content="width=device-width">
 
-        <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
-        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+        <!-- <link rel="stylesheet" href="css/normalize.css">
+         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+         -->
+
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -32,9 +34,9 @@
 
         <script>
             $(document).ready(function(){
-                var jsontest = '{"ID":null,"name":"Doe","first-name":"John","age":25,"hobbies":["reading","cinema",{"sports":["volley-ball","snowboard"]}],"address":{}}';
-                
-                $('#data').jsontree(jsontest);
+                var alltypes='{"null":null,"boolean":[true,false],"number":[0,2.1,2e8,-123456780],"string":{"any characters":"abc def","quotation \\\"":"\\\"","backslash \\\\":"\\\\","slash \\/":"\\/","backspace \\\\b":"\\b","form feed \\\\f":"\\f","new line \\\\n":"\\n","carriage return \\\\r":"\\r","tab \\\\t":"\\t","hexadeci\\u006Dal":"\\u004A-\\u005A"}}';
+
+                $('#data').jsontree(alltypes);
             });
         </script>
 
