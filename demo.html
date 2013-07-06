@@ -10,33 +10,35 @@
         <meta name="description" content="jQuery plugin jsontree">
         <meta name="viewport" content="width=device-width">
 
-        <link rel="stylesheet" href="css/main.css">
-        <!-- <link rel="stylesheet" href="css/normalize.css">
-         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
-         -->
+        <link rel="stylesheet" href="css/jsontree.css">
 
     </head>
     <body>
-        <!--[if lt IE 7]>
-            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
-        <![endif]-->
 
         <!-- Add your site or application content here -->
         <h1>jQuery jsontree plugin for JSON object visualization.</h1>
+        
+        <h2>First Tree</h2>
 
         <div id="data">
+        </div>
+        
+        <h2>Second Tree</h2>
+        
+        <div id="data2">
         </div>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery.min.js"><\/script>')</script>
 
-        <script src="jsontree.js"></script>
+        <script src="js/jsontree.js"></script>
 
         <script>
             $(document).ready(function(){
-                var alltypes='{"null":null,"boolean":[true,false],"number":[0,2.1,2e8,-123456780],"string":{"any characters":"abc def","quotation \\\"":"\\\"","backslash \\\\":"\\\\","slash \\/":"\\/","backspace \\\\b":"\\b","form feed \\\\f":"\\f","new line \\\\n":"\\n","carriage return \\\\r":"\\r","tab \\\\t":"\\t","hexadeci\\u006Dal":"\\u004A-\\u005A"}}';
+                var alltypes='{"Stack Overflow Profile":{"emptyarray":[], "null":null,"boolean":false,"number":52,"number2":562.626,"boolean array":[true,false],"boolean2":[true],"array of numbers":[0,2.1,2e8,-123456780],"string":{"any characters":"abc def","an int":5, "quotation \\\"":"\\\"", "big string":"really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long ","backslash \\\\":"\\\\","slash \\/":"\\/","backspace \\\\b":"\\b","form feed \\\\f":"\\f","new line \\\\n":"\\n","carriage return \\\\r":"\\r","tab \\\\t":"\\t","hexadeci\\u006Dal":"\\u004A-\\u005A"}}, "big string":"really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long really really long "}';
 
                 $('#data').jsontree(alltypes);
+                $('#data2').jsontree('{"hi":"its good", "hi352352":{"hiwef":"yep"}, "hi2":"its good", "hi3":"its good", "hi4":"its good", "hi5":"its good"}');
             });
         </script>
 
