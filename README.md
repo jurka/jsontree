@@ -2,4 +2,10 @@
 
 jQuery plugin for JSON visualization 
 
-Take a look at the demo page [http://jurka.github.com/jsontree](http://jurka.github.com/jsontree)
+### Features:
+  * JSON tree view
+  * Collaplable elements
+  * Supports JSON Copy-Paste
+  * No additional images used, only 2 files: jsontree.js and jsontree.css
+
+Take a look at the demo page [http://jurka.github.io/jsontree](http://jurka.github.com/jsontree)
