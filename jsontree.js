@@ -54,7 +54,7 @@
 
   var JsonTree = function(self){
     var j = $.parseJSON(self.data('jsontree'));
-    self.append('<ul class="jsontree"></ol>');
+    self.append('<ul class="jsontree"></ul>');
     _render([j], self.find('.jsontree'));
   };
 
