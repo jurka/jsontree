@@ -22,19 +22,19 @@
         coma = ',';
       }
       if (obj[key] === null){
-        parent.append('<li><span class="key">'+key+':</span> <span class="null"> null </span>'+coma+'</li>');
+        parent.append('<li><span class="key">'+key+':</span><span class="null"> null </span>'+coma+'</li>');
       } else if (typeof obj[key] === 'boolean'){
-        parent.append('<li><span class="key">'+key+':</span> <span class="boolean">'+obj[key]+'</span>'+coma+'</li>');
+        parent.append('<li><span class="key">'+key+':</span><span class="boolean">'+obj[key]+'</span>'+coma+'</li>');
       } else if (typeof obj[key] === 'number'){
-        parent.append('<li><span class="key">'+key+':</span> <span class="number">'+obj[key]+'</span>'+coma+'</li>');
+        parent.append('<li><span class="key">'+key+':</span><span class="number">'+obj[key]+'</span>'+coma+'</li>');
       } else if (typeof obj[key] === 'string'){
-        parent.append('<li><span class="key">'+key+':</span> <span class="string">"'+obj[key]+'"</span>'+coma+'</li>');
+        parent.append('<li><span class="key">'+key+':</span><span class="string">"'+obj[key]+'"</span>'+coma+'</li>');
       } else if ($.isArray(obj[key])) {
-        var arval = $('<li><span class="key">'+key+':</span> <span class="fold">[</span><ul class="array"></ul><span>]</span>'+coma+'</li>');
+        var arval = $('<li><span class="key">'+key+':</span><span class="fold">[</span><ul class="array"></ul><span>]</span>'+coma+'</li>');
         parent.append(arval);
         arval.find('.unfold').data('card', _render(obj[key], arval.find('.array'))) ;
       }else{
-        var oval = $('<li><span class="key">'+key+':</span> <span class="fold">{</span><ul class="object"></ul><span>}</span>'+coma+'</li>');
+        var oval = $('<li><span class="key">'+key+':</span><span class="fold">{</span><ul class="object"></ul><span>}</span>'+coma+'</li>');
         parent.append(oval);
         oval.find('.unfold').data('card', _render(obj[key], oval.find('.object')));
       }
@@ -54,7 +54,7 @@
 
   var JsonTree = function(self){
     var j = $.parseJSON(self.data('jsontree'));
-    self.append('<ul class="jsontree"></ol>');
+    self.append('<ul class="jsontree"></ul>');
     _render([j], self.find('.jsontree'));
   };
 
