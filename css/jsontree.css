@@ -34,8 +34,8 @@
 .jsontree .fold{
     cursor: pointer;
 }
-.jsontree .fold:before{
-    content: "⊗";
+.jsontree .fold:before,
+.jsontree .fold.folded:before {
     padding: 0;
     font-size: 16px;
     margin: 0;
@@ -46,19 +46,20 @@
     line-height: 13px;
     vertical-align: middle;
     font-family: sans-serif;
+    position:relative;
+    top: -1px;
+    background: #eee;
+    border-radius: 3px;
+}
+.jsontree .fold:before{
+    content: "-";
     color: #933;
 }
 .jsontree .fold.folded:before{
-    content: "⊕";
-    padding: 0;
-    font-size: 16px;
-    margin: 0;
-    display: inline-block;
-    width: 13px;
-    text-align: center;
-    height: 13px;
-    line-height: 13px;
-    vertical-align: middle;
-    font-family: sans-serif;
+    content: "+";
+    color: #000;
+}
+.jsontree .fold.folded:after{
+    content: "…";
     color: #000;
 }
