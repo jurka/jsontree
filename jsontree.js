@@ -54,17 +54,23 @@
 
   var JsonTree = function(self){
     var j = $.parseJSON(self.data('jsontree'));
-    self.append('<ul class="jsontree"></ul>');
+    self.html('<ul class="jsontree"></ul>');
     _render([j], self.find('.jsontree'));
   };
 
   $.fn.jsontree = function (option) {
     return this.each(function () {
-      var self = $(this), data = self.data('jsontree');
+      var self = $(this), data = self.data('jsontree'), stringToRender = option;
+	  if (typeof option == 'object') {
+		  if (option.overwrite && option.stringToRender) {
+			  data = undefined;
+			  stringToRender = option.stringToRender;
+		  }
+	  }
       if (!data) {
-        if (typeof option == 'string') {
-          data = option;
-          self.data('jsontree', option);
+        if (typeof stringToRender == 'string') {
+          data = stringToRender;
+          self.data('jsontree', stringToRender);
         }else{
           data = {};
           self.data('jsontree', '');
