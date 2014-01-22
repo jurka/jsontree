@@ -26,6 +26,7 @@
 
         <div id="data">
         </div>
+		<div id="refresh">refresh json string</div>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery.min.js"><\/script>')</script>
@@ -37,6 +38,11 @@
                 var alltypes='{"null":null,"boolean":[true,false],"number":[0,2.1,2e8,-123456780],"string":{"any characters":"abc def","quotation \\\"":"\\\"","backslash \\\\":"\\\\","slash \\/":"\\/","backspace \\\\b":"\\b","form feed \\\\f":"\\f","new line \\\\n":"\\n","carriage return \\\\r":"\\r","tab \\\\t":"\\t","hexadeci\\u006Dal":"\\u004A-\\u005A"}}';
 
                 $('#data').jsontree(alltypes);
+				
+				$('#refresh').click(function(evt) {
+					var options = {overwrite : true, stringToRender : '{"name" : "a second json string", "boolean" : [true, false]}'};
+					$('#data').jsontree(options);
+				});
             });
         </script>
 
