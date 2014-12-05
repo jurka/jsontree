@@ -58,9 +58,15 @@
     _render([j], self.find('.jsontree'));
   };
 
-  $.fn.jsontree = function (option) {
+  $.fn.jsontree = function (option, close) {
     return this.each(function () {
       var self = $(this), data = self.data('jsontree');
+      
+      if (close == null)
+      {
+        close = false;
+      }
+      
       if (!data) {
         if (typeof option == 'string') {
           data = option;
@@ -70,7 +76,13 @@
           self.data('jsontree', '');
         }
       }
+      
       new JsonTree(self);
+      if (close)
+      {
+        $('.jsontree .fold', self).eq(0).trigger('click');
+      }
+      
     });
   };
 
